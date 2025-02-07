@@ -1399,19 +1399,18 @@ strong {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #333 !important;
+  color: #0061f2 !important;
   width: 40px;
   height: 40px;
-  background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
 
 .swiper-button-next {
-  right: -20px;
+  right: -50px;
 }
 
 .swiper-button-prev {
-  left: -20px;
+  left: -50px;
 }
 
 @media (max-width: 1024px) {
@@ -1420,14 +1419,14 @@ strong {
   }
   .team-member {
     padding: 5px;
-    max-width: 220px;
+    max-width: 360px;
     margin: 0 auto;
   }
   .swiper-button-next {
-    right: -10px;
+    right: -50px;
   }
   .swiper-button-prev {
-    left: -10px;
+    left: -50px;
   }
 }
 
@@ -1440,14 +1439,14 @@ strong {
     align-items: center;
   }
   .team-member {
-    max-width: 200px;
+    max-width: 300px;
     margin: 0 auto;
   }
   .swiper-button-next {
-    right: 10px;
+    right: 20px;
   }
   .swiper-button-prev {
-    left: 10px;
+    left: 20px;
   }
 }
 
@@ -1456,14 +1455,14 @@ strong {
     padding: 40px 0;
   }
   .team-member {
-    max-width: 180px;
+    max-width: 240px;
     margin: 0 auto;
   }
   .swiper-button-next {
-    right: 20px;
+    right: 10px;
   }
   .swiper-button-prev {
-    left: 20px;
+    left: 10px;
   }
 }
 
@@ -1646,6 +1645,138 @@ strong {
   .contact-form .btn-transparent {
     font-size: 1rem;
     padding: 10px 15px;
+  }
+}
+
+/*---------------------------------------
+Sponsor
+-----------------------------------------*/
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Base styles for logos section */
+.logos {
+  overflow: hidden;
+  padding: 40px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+  transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+/* Hover effect for logos slide to pause animation */
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+/* Logos slide animation */
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+/* Logos image styling */
+.logos-slide img {
+  height: 50px;
+  margin: 0 20px;
+  transition: filter 0.3s ease; /* Smooth transition for filter */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile-first, for screens less than 480px */
+@media (max-width: 480px) {
+  .logos {
+    padding: 20px 0; /* Adjusted padding for smaller screens */
+  }
+
+  .logos-slide img {
+    height: 35px; /* Smaller logo size on mobile */
+    margin: 0 10px; /* Reduced spacing between logos */
+  }
+
+  .logos-slide {
+    animation: 20s slide infinite linear; /* Faster animation on mobile for better user experience */
+  }
+}
+
+/* For tablets and smaller desktops, max width 768px */
+@media (max-width: 768px) {
+  .logos {
+    padding: 30px 0; /* Adjusted padding for tablets */
+  }
+
+  .logos-slide img {
+    height: 40px; /* Slightly smaller logos on tablets */
+    margin: 0 15px; /* Reduced spacing between logos */
+  }
+
+  .logos-slide {
+    animation: 25s slide infinite linear; /* Slightly slower animation on tablets */
+  }
+}
+
+/* For larger desktops, max width 1024px */
+@media (max-width: 1024px) {
+  .logos {
+    padding: 35px 0; /* Adjusted padding for larger screens */
+  }
+
+  .logos-slide img {
+    height: 45px; /* Standard size for logos on larger desktops */
+    margin: 0 20px; /* Standard spacing */
+  }
+
+  .logos-slide {
+    animation: 30s slide infinite linear; /* Default animation time for larger screens */
+  }
+}
+
+/* For larger desktops, max width 1440px */
+@media (max-width: 1440px) {
+  .logos {
+    padding: 40px 0; /* Adjusted padding for large desktops */
+  }
+
+  .logos-slide img {
+    height: 50px; /* Default size for logos */
+    margin: 0 20px; /* Standard spacing */
+  }
+
+  .logos-slide {
+    animation: 35s slide infinite linear; /* Default animation time */
+  }
+}
+
+/* For screens larger than 1440px (large desktops and 4K monitors) */
+@media (min-width: 1441px) {
+  .logos {
+    padding: 50px 0; /* More padding for large screens */
+  }
+
+  .logos-slide img {
+    height: 60px; /* Larger logo size for large screens */
+    margin: 0 30px; /* Increased spacing between logos */
+  }
+
+  .logos-slide {
+    animation: 40s slide infinite linear; /* Slower animation for large screens */
   }
 }
 
